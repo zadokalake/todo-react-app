@@ -26,9 +26,6 @@ const TaskSchema = new mongoose.Schema({
 });
 const Task = mongoose.model('Task', TaskSchema);
 
-const cors = require('cors');
-app.use(cors());
-
 // Routes
 app.get('/api/tasks', async (req, res) => {
   const tasks = await Task.find();
