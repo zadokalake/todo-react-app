@@ -26,6 +26,9 @@ const TaskSchema = new mongoose.Schema({
 });
 const Task = mongoose.model('Task', TaskSchema);
 
+const cors = require('cors');
+app.use(cors());
+
 // Routes
 app.get('/api/tasks', async (req, res) => {
   const tasks = await Task.find();
@@ -47,3 +50,7 @@ app.put('/api/tasks/:id', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+app.use(cors({
+  origin: 'https://zadok-to-do-app.vercel.app/'
+}));
