@@ -51,3 +51,12 @@ app.listen(PORT, () => {
 app.use(cors({
   origin: 'https://zadok-to-do-app.vercel.app'
 }));
+
+app.delete('/api/tasks/:id', async (req, res) => {
+  try {
+    await Task.findByIdAndDelete(req.params.id);
+    res.status(204).send();
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
