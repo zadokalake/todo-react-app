@@ -49,5 +49,5 @@ app.listen(PORT, () => {
 });
 
 app.use(cors({
-  origin: 'https://zadok-to-do-app.vercel.app/'
+  origin: 'https://zadok-to-do-app.vercel.app'
 }));
