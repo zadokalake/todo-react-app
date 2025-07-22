@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:5000/api', // Your backend URL
+  baseURL: 'https://zadok-todo-app.onrender.com', // Your backend URL
 });
 
 export const getTasks = () => API.get('/tasks');
